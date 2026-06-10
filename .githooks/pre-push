@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Ensure that script exits on fail
+set -euo pipefail
+
+# Check formatting
+./scripts/format.sh
+
+# Check if badges need to be updated
+./scripts/badges.sh
+if ! git diff --quiet badges/; then
+    echo "Error: Badges are out of date. Please run './scripts/badges.sh' and commit the changes."
+    exit 1
+fi
