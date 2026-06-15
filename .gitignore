@@ -20,3 +20,9 @@ wheels/
 
 # VScode
 .vscode/
+
+# model files
+model/
+
+# wheel
+binary/*.whl

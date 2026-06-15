@@ -4,7 +4,12 @@ version = "0.0.1"
 description = "Add your description here."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["typeguard>=4.4.4"]
+dependencies = [
+    "crossformer-binary-sdk",
+    "ipykernel>=7.3.0",
+    "pip>=26.1.2",
+    "typeguard>=4.4.4",
+]
 
 [dependency-groups]
 dev = [
@@ -24,3 +29,6 @@ build-backend = "hatchling.build"
 
 [tool.isort]
 profile = "black"
+
+[tool.uv.sources]
+crossformer-binary-sdk = { path = "crossformer_binary_sdk-1.0.0-cp312-abi3-win_amd64.whl" }
