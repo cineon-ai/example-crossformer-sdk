@@ -5,7 +5,6 @@ description = "Add your description here."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "crossformer-binary-sdk",
     "ipykernel>=7.3.0",
     "pip>=26.1.2",
     "typeguard>=4.4.4",
