@@ -29,6 +29,3 @@ build-backend = "hatchling.build"
 
 [tool.isort]
 profile = "black"
-
-[tool.uv.sources]
-crossformer-binary-sdk = { path = "crossformer_binary_sdk-1.0.0-cp312-abi3-win_amd64.whl" }
