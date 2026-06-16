@@ -22,7 +22,7 @@ wheels/
 .vscode/
 
 # model files
-model/
+model/*.whl
 
 # wheel
 binary/*.whl
