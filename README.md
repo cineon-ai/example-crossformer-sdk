@@ -1,52 +1,31 @@
-# Python repository template
+# Crossformer Example Repository
 
 ![Latest Release](badges/version.svg) ![Coverage Status](badges/coverage.svg) ![Code complexity](badges/complexity.svg)
 
-This serves as an example of how to set up a new Python project with:
+This repository contains an example of how to use the crossformer binary. For convenience a class, `CrossformerModel`, has been provided that provides type hints, but is in no way required to use the `crossformer_binary_sdk`.
 
-    - A standard directory structure
-    - A Python environment managed by `uv`
-    - An example script: `scripts/example.py`
-    - Semantic versioning
-    - Formatting checks: `bash`; `markdown`
-    - Python checks: `isort`; `ruff`; `mypy`
-    - A testing suite
-    - Badge generation
-    - GitHub continuous integration that checks formatting and tests
+## Installation
 
-You should update this `README` to be specific to your project. You should also update:
+The `crossformer_binary_sdk` only provides part of the required code to run a crossformer. The model weights and architecture must also be provided, as well as a set of configuration files. These will be shared with users of this repository, and should be placed in a directory `model/` by default.
 
-- The `[project]: name` field of `pyproject.toml`.
-- The `[project]: description` field of `pyproject.toml`.
-- The name of the `src/repository_template` directory.
-- The name of the `src/repository_template/main.py` file.
-- The string in `metadata.version` in `src/repository_template/version.py`
-
-## Run the example
-
-A simple "Hello World" example can be run using:
+Start by installing this package's dependencies, then the model-specific dependencies. Make sure to do this in the order below, as `uv sync` removes packages from the virtual environment it doesn't see in the `pyproject.toml`.
 
 ```bash
-uv run scripts/example.py
+uv sync
+uv pip install crossformer_binary_sdk-<version>-<arch>.whl
 ```
 
-## Set up the hooks
-
-These pre-push hooks ensure that the formatter is run and the badges are updated every time you attempt to `git push`. This way formatting errors are caught and be corrected before they reach the GitHub continuous-integration (CI) step. The badges are then automatically up-to-date.
+Check the installation worked as expected by running the following:
 
 ```bash
-git config --local core.hooksPath .githooks/
+uv run python -c "from crossformer_binary_sdk import binary_sdk;print(binary_sdk)"
 ```
 
-## Check the formatting
+Which should print something like `<module 'crossformer_binary_sdk.binary_sdk' from '.venv/Lib/site-packages/crossformer_binary_sdk/binary_sdk.pyd'>`
 
-The formatting can be checked manually using:
+## Run the notebook
 
-```bash
-./scripts/format.sh
-```
-
-this is exactly the script that is run in the CI pipeline and the pre-push hook. Formatting uses `Prettier` for markdown, `shfmt` for shell scripts, and `ruff` for Python.
+In `notebooks/` there is a python notebook, `test_sdk.ipynb`, which contains an example showing how to load the model, as well as how to preprocess data, and what the predictions look like from the model.
 
 ## Run the tests
 
