@@ -1,5 +1,5 @@
 from cineon_format import CineonData
-from cineon_sdk.binary_sdk import CrossformerBinarySDK
+from cineon_sdk.crossformer_binary_sdk import CrossformerBinarySDK
 from numpy import ndarray
 
 
