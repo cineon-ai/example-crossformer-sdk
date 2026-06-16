@@ -7,6 +7,7 @@ class CrossformerModel:
     """
     A wrapper around BinarySDK, to provide type hints to users.
     """
+
     def __init__(self, model_path: str):
         self.model = BinarySDK()
         self.model.load(model_path)
