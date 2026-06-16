@@ -1,12 +1,7 @@
-import python_template
+import test_binary_sdk
 from typeguard import typechecked
 
 
 @typechecked
-def test_hello():
-    python_template.hello()
-
-
-@typechecked
 def test_version():
-    python_template.__version__
+    test_binary_sdk.__version__
