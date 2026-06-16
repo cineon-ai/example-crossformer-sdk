@@ -2,11 +2,11 @@
 
 ![Latest Release](badges/version.svg) ![Coverage Status](badges/coverage.svg) ![Code complexity](badges/complexity.svg)
 
-This repository contains an example of how to use Cineon Model binaries. For convenience a wrapper class, `CrossformerModel`, has been provided that provides type hints, but is in no way required to use the `crossformer_binary_sdk`.
+This repository contains an example of how to use Crossformer binaries. For convenience a wrapper class, `CrossformerModel`, has been provided that provides type hints, but is in no way required to use the `crossformer_binary_sdk`.
 
 ## Installation
 
-The SDK only provides part of the required code to run a Cineon Model. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository and should be placed in the `model/` directory by default.
+The SDK only provides part of the required code to run a Crossformer. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository and should be placed in the `model/` directory by default.
 
 The installation requires the Python package manager `uv`. This is provided in the Docker image `quay.io/pypa/manylinux_2_28_x86_64`.
 
