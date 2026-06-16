@@ -1,7 +1,7 @@
 [project]
-name = "test-binary-sdk"
+name = "example-crossformer-sdk"
 version = "0.0.1"
-description = "Add your description here."
+description = "A repository for testing the binary sdk package for model inference."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
