@@ -1,5 +1,5 @@
 [project]
-name = "python-template"
+name = "test-binary-sdk"
 version = "0.0.1"
 description = "Add your description here."
 readme = "README.md"

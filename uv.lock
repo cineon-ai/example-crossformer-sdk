@@ -898,47 +898,6 @@ wheels = [
 ]
 
 [[package]]
-name = "python-template"
-version = "0.0.1"
-source = { editable = "." }
-dependencies = [
-    { name = "ipykernel" },
-    { name = "pip" },
-    { name = "typeguard" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "coverage" },
-    { name = "genbadge", extra = ["coverage"] },
-    { name = "isort" },
-    { name = "mypy" },
-    { name = "pytest" },
-    { name = "radon" },
-    { name = "ruff" },
-    { name = "vulture" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "ipykernel", specifier = ">=7.3.0" },
-    { name = "pip", specifier = ">=26.1.2" },
-    { name = "typeguard", specifier = ">=4.4.4" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "coverage", specifier = ">=7.10.6" },
-    { name = "genbadge", extras = ["coverage"], specifier = ">=1.1.3" },
-    { name = "isort", specifier = ">=6.0.1" },
-    { name = "mypy", specifier = ">=1.17.1" },
-    { name = "pytest", specifier = ">=8.4.1" },
-    { name = "radon", specifier = ">=6.0.1" },
-    { name = "ruff", specifier = ">=0.12.11" },
-    { name = "vulture", specifier = ">=2.16" },
-]
-
-[[package]]
 name = "pyzmq"
 version = "27.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1064,6 +1023,47 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/28/e3/55dcc2cfbc3ca9c29519eb6884dd1415ecb53b0e934862d3559ddcb7e20b/stack_data-0.6.3.tar.gz", hash = "sha256:836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9", size = 44707, upload-time = "2023-09-30T13:58:05.479Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f1/7b/ce1eafaf1a76852e2ec9b22edecf1daa58175c090266e9f6c64afcd81d91/stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695", size = 24521, upload-time = "2023-09-30T13:58:03.53Z" },
+]
+
+[[package]]
+name = "test-binary-sdk"
+version = "0.0.1"
+source = { editable = "." }
+dependencies = [
+    { name = "ipykernel" },
+    { name = "pip" },
+    { name = "typeguard" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "coverage" },
+    { name = "genbadge", extra = ["coverage"] },
+    { name = "isort" },
+    { name = "mypy" },
+    { name = "pytest" },
+    { name = "radon" },
+    { name = "ruff" },
+    { name = "vulture" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ipykernel", specifier = ">=7.3.0" },
+    { name = "pip", specifier = ">=26.1.2" },
+    { name = "typeguard", specifier = ">=4.4.4" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "coverage", specifier = ">=7.10.6" },
+    { name = "genbadge", extras = ["coverage"], specifier = ">=1.1.3" },
+    { name = "isort", specifier = ">=6.0.1" },
+    { name = "mypy", specifier = ">=1.17.1" },
+    { name = "pytest", specifier = ">=8.4.1" },
+    { name = "radon", specifier = ">=6.0.1" },
+    { name = "ruff", specifier = ">=0.12.11" },
+    { name = "vulture", specifier = ">=2.16" },
 ]
 
 [[package]]
