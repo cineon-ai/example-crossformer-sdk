@@ -1,6 +1,5 @@
-from typeguard import typechecked
-
 import python_template
+from typeguard import typechecked
 
 
 @typechecked
