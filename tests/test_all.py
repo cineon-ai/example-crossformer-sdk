@@ -1,5 +1,6 @@
-import test_binary_sdk
 from typeguard import typechecked
+
+import test_binary_sdk
 
 
 @typechecked
