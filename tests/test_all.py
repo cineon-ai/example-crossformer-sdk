@@ -20,3 +20,5 @@ def test_model_load():
 def test_model_preprocess(data: CineonData):
     model = CrossformerModel("model")
     features, mask = model.preprocess([data])
+    assert features is not None
+    assert mask is not None
