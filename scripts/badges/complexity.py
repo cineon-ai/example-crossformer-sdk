@@ -25,7 +25,12 @@ with open(input_path, "r") as f:
     complexity = f.read().strip()
 
 # Extract the code complexity score
-complexity_score = complexity.split("Average complexity:")[-1].strip()[0]
+parts = complexity.split("Average complexity:")
+
+if len(parts) < 2 or not parts[-1].strip():
+    raise RuntimeError("Could not find 'Average complexity:' in Radon output")
+
+complexity_score = parts[-1].strip()[0]
 print(f"Score: {complexity_score}")
 
 # Create the badge and save
