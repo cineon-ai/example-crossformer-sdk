@@ -1,15 +1,15 @@
 from cineon_format import CineonData
-from crossformer_binary_sdk.binary_sdk import BinarySDK
+from cineon_sdk.crossformer_binary_sdk import CrossformerBinarySDK
 from numpy import ndarray
 
 
 class CrossformerModel:
     """
-    A wrapper around BinarySDK, to provide type hints to users.
+    A wrapper around CrossformerBinarySDK, to provide type hints to users.
     """
 
     def __init__(self, model_path: str):
-        self.model = BinarySDK()
+        self.model = CrossformerBinarySDK()
         self.model.load(model_path)
 
     def run(self, data: list[CineonData]) -> ndarray:

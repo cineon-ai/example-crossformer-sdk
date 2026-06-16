@@ -18,10 +18,10 @@ uv pip install crossformer_binary_sdk-<version>-<arch>.whl
 Check the installation worked as expected by running the following:
 
 ```bash
-uv run python -c "from crossformer_binary_sdk import binary_sdk;print(binary_sdk)"
+uv run python -c "from cineon_sdk import crossformer_binary_sdk;print(crossformer_binary_sdk)"
 ```
 
-Which should print something like `<module 'crossformer_binary_sdk.binary_sdk' from '.venv/Lib/site-packages/crossformer_binary_sdk/binary_sdk.pyd'>`
+Which should print something like `<module 'cineon_sdk.crossformer_binary_sdk' from '.venv/Lib/site-packages/cineon_sdk/crossformer_binary_sdk.pyd'>`
 
 ## Run the notebook
 
