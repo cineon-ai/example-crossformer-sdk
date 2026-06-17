@@ -20,6 +20,7 @@ followed by the model-specific dependencies:
 
 ```bash
 uv pip install <name>-<version>-<arch>.whl
+uv add -r model/requirements.txt
 ```
 
 Make sure to do these commands in that specific order since `uv sync` removes packages from the virtual environment that it does not see in the `pyproject.toml`.
