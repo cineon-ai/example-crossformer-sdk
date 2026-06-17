@@ -1,3 +1,3 @@
 from importlib import metadata
 
-__version__ = metadata.version("test-binary-sdk")
+__version__ = metadata.version("example-crossformer-sdk")

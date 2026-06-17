@@ -23,3 +23,10 @@ class CrossformerModel:
 
     def is_valid(self):
         return self.model.is_valid()
+
+if __name__ == "__main__":
+    model = CrossformerModel("model")
+    data = CineonData.from_csv("data/example.csv")
+    
+    features, masks = model.preprocess([data])
+    print(model.forward(features, masks))

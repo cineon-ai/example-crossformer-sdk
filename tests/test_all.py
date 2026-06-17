@@ -1,13 +1,13 @@
 from cineon_format import CineonData
 from typeguard import typechecked
 
-import test_binary_sdk
-from test_binary_sdk import CrossformerModel
+import example_crossformer_sdk
+from example_crossformer_sdk import CrossformerModel
 
 
 @typechecked
 def test_version():
-    assert test_binary_sdk.__version__
+    assert example_crossformer_sdk.__version__
 
 
 @typechecked
