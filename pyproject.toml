@@ -36,7 +36,22 @@ build-backend = "hatchling.build"
 profile = "black"
 
 [tool.uv]
-package = true
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[project.optional-dependencies]
+cuda = ["torch"]
+cpu = ["torch"]
 
 [tool.uv.sources]
-cineon-sdk = { path = "binary/cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
+torch = { index = "pytorch-cu128" }
+cineon-sdk = { path = "cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
