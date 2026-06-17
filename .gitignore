@@ -23,7 +23,6 @@ wheels/
 
 # model files
 model/*
-*.whl
 
 # wheel
 binary/*.whl

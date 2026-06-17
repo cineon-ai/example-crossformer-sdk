@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "cineon-format>=3.0.7",
+    "cineon-sdk",
     "ipykernel>=7.3.0",
     "numpy>=2.4.0",
     "pip>=26.1.2",
@@ -36,3 +37,6 @@ profile = "black"
 
 [tool.uv]
 package = true
+
+[tool.uv.sources]
+cineon-sdk = { path = "binary/cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
