@@ -21,8 +21,9 @@ wheels/
 # VScode
 .vscode/
 
-# model files
+# Model and binary files
 model/*
+*.whl
 
-# wheel
-binary/*.whl
+# Keep empty directories
+!.gitkeep
