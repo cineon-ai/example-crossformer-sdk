@@ -6,11 +6,11 @@ This repository contains an example of how to use Cineon Crossformer binaries. F
 
 ## Installation
 
-This repository only provides part of the required code to run a binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the root directory of the repository and the model files should be placed in the `model/` directory.
+This repository only provides part of the required code to run a binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory.
 
 The installation requires the Python package manager `uv`. This is provided in the Docker image `quay.io/pypa/manylinux_2_28_x86_64`.
 
-By default, when interacting with `uv` it will try and remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken not to `uv sync` or `uv run` when the model dependencies are installed.
+By default, `uv sync` (and commands like `uv run` that may sync the environment) will try to remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken not to `uv sync` or `uv run` when the model dependencies are installed.
 
 First install the package dependencies:
 
