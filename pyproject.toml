@@ -3,7 +3,7 @@ name = "example-crossformer-sdk"
 version = "0.0.1"
 description = "A repository for testing the binary sdk package for model inference."
 readme = "README.md"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.12"
 dependencies = [
     "cineon-format>=3.0.7",
     "cineon-sdk",
