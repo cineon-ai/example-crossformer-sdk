@@ -20,15 +20,20 @@ followed by the model-specific dependencies:
 
 ```bash
 uv pip install <name>-<version>-<arch>.whl
-uv add -r model/requirements.txt
+uv pip install -r model/requirements.txt
 ```
 
 Make sure to do these commands in that specific order since `uv sync` removes packages from the virtual environment that it does not see in the `pyproject.toml`.
+Something that can help with managing this, once your environment is set up, is to activate the virtual environment in `.venv` with the following command.
+
+```bash
+source .venv/bin/activate
+```
 
 Check the installation works as expected by running the following command:
 
 ```bash
-uv run python -c "from cineon_sdk import crossformer_binary_sdk;print(crossformer_binary_sdk)"
+python -c "from cineon_sdk import crossformer_binary_sdk;print(crossformer_binary_sdk)"
 ```
 
 which should print something like:
@@ -40,7 +45,7 @@ which should print something like:
 and then run the tests:
 
 ```bash
-uv run pytest
+pytest ./tests
 ```
 
 ## Run the notebook
