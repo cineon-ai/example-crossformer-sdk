@@ -39,4 +39,4 @@ profile = "black"
 package = true
 
 [tool.uv.sources]
-cineon-sdk = { path = "cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
+cineon-sdk = { path = "binary/cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
