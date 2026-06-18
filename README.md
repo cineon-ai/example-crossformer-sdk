@@ -19,7 +19,6 @@ uv sync
 followed by the model-specific dependencies:
 
 ```bash
-uv pip install <name>-<version>-<arch>.whl
 uv pip install -r model/requirements.txt
 ```
 
