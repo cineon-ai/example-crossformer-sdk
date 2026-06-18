@@ -6,28 +6,36 @@ This repository contains an example of how to use Cineon Crossformer binaries. F
 
 ## Installation
 
-This repository only provides part of the required code to run a binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the root directory of the repository and the model files should be placed in the `model/` directory.
+This repository only provides part of the required code to run a binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory.
 
 The installation requires the Python package manager `uv`. This is provided in the Docker image `quay.io/pypa/manylinux_2_28_x86_64`.
 
-Start by installing the package dependencies:
+By default, `uv sync` (and commands like `uv run` that may sync the environment) will try to remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken not to `uv sync` or `uv run` when the model dependencies are installed.
+
+First install the package dependencies:
 
 ```bash
 uv sync
 ```
 
-followed by the model-specific dependencies:
+After installing the package dependencies, install the model-specific dependencies:
 
 ```bash
-uv pip install <name>-<version>-<arch>.whl
+uv pip install -r model/requirements.txt
 ```
 
 Make sure to do these commands in that specific order since `uv sync` removes packages from the virtual environment that it does not see in the `pyproject.toml`.
 
+The best way to not face issues is to activate the virtual environment in `.venv` with the following command. This command should be ran before continuing.
+
+```bash
+source .venv/bin/activate
+```
+
 Check the installation works as expected by running the following command:
 
 ```bash
-uv run python -c "from cineon_sdk import crossformer_binary_sdk;print(crossformer_binary_sdk)"
+python -c "from cineon_sdk import crossformer_binary_sdk;print(crossformer_binary_sdk)"
 ```
 
 which should print something like:
@@ -39,7 +47,7 @@ which should print something like:
 and then run the tests:
 
 ```bash
-uv run pytest
+pytest ./tests
 ```
 
 ## Run the notebook
