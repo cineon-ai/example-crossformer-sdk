@@ -11,13 +11,13 @@ This repository only provides part of the required code to run a binary. The wei
 The installation requires the Python package manager `uv`. This is provided in the Docker image `quay.io/pypa/manylinux_2_28_x86_64`.
 By default, when interacting with `uv` it will try and remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken not to `uv sync` or `uv run` when the model dependencies are installed.
 
-Start by installing the package dependencies:
+First install the package dependencies:
 
 ```bash
 uv sync
 ```
 
-followed by the model-specific dependencies:
+After installing the package dependencies, install the model-specific dependencies:
 
 ```bash
 uv pip install -r model/requirements.txt
