@@ -6,7 +6,7 @@ This repository contains an example of how to use Cineon Crossformer binaries. F
 
 ## Installation
 
-This repository only provides part of the required code to run a binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory.
+This repository only provides part of the required code to run a Cineon model binary. The weights and architecture must also be provided, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory. The `model/` directory should contain a `requirements.txt` file (as well as some other files) and contain a subdirectory `artifacts/`.
 
 The installation requires the Python package manager `uv`. This is provided in the Docker image `quay.io/pypa/manylinux_2_28_x86_64`.
 
@@ -19,18 +19,14 @@ uv sync
 After installing the package dependencies, install the model-specific dependencies:
 
 ```bash
-uv pip install -r model/requirements.txt --index-strategy unsafe-best-match
+UV_HTTP_TIMEOUT=10000000 uv pip install -r model/requirements.txt --index-strategy unsafe-best-match
 ```
 
-We found it necessary to set an environment variable to prevent the install from timing out
+We found it necessary to set the `UV_HTTP_TIMEOUT` environment variable to prevent the installation from timing out.
 
-```bash
-export UV_HTTP_TIMEOUT=10000000
-```
+Make sure to run the above commands in the specific order above since `uv sync` removes packages from the virtual environment that it does not see in the `pyproject.toml`.
 
-Make sure to do these commands in that specific order since `uv sync` removes packages from the virtual environment that it does not see in the `pyproject.toml`.
-
-By default, `uv sync` (and commands like `uv run` that may sync the environment) will try to remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken not to `uv sync` or `uv run` when the model dependencies are installed. Note carefully the use of `--no-sync` in the commands below.
+By default, `uv sync` (and commands like `uv run` that may sync the environment) will try to remove packages installed in the virtual environment that are not present in `pyproject.toml`. This is an issue because we have some model-specific dependencies not present in `pyproject.toml`, so care must be taken _not_ to `uv sync` or `uv run` when the model dependencies are installed. Note carefully the use of `--no-sync` in the commands below.
 
 Check the installation works as expected by running the following command:
 
@@ -52,6 +48,8 @@ To run the testing suite:
 uv run --no-sync pytest
 ```
 
+which should show all tests passing.
+
 ## Run the example
 
 To run the example:
@@ -59,6 +57,8 @@ To run the example:
 ```bash
 uv run --no-sync src/example_crossformer_sdk/main.py
 ```
+
+which should print some data to the terminal.
 
 ## Run the notebook
 
