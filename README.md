@@ -6,7 +6,15 @@ This repository contains an example of how to use Cineon Model binaries. For con
 
 ## Set up
 
-This repository provides only part of the required code to run a Cineon model binary. The weights and architecture must be provided separately, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory. Once this is done the `binary/` directory should contain a single `whl` file while the `model/` directory should contain a `requirements.txt` file (as well as some other files) and contain a subdirectory `artifacts/`.
+This repository provides only part of the required code to run a Cineon Model binary. The weights and architecture must be provided separately, together with a set of configuration files. These will be shared separately with users of this repository. The binary wheel should be placed in the `binary/` directory of the repository and the model files should be placed in the `model/` directory. Note that if the models are recieved at `.7z` files they should be unzipped first. Also note that only one model at a time can be placed in the `model/` directory.
+
+Once this is done the `binary/` directory should contain a single `.whl` file while the `model/` directory should contain a `requirements.txt` file (as well as some other files) and a single subdirectory `artifacts/`.
+
+If this is your first time installing, or you are installing on a different architecture, you should ensure that you manually remove the current Python virtual environment:
+
+```bash
+rm -rf .venv
+```
 
 ## Installation
 

@@ -451,8 +451,8 @@ wheels = [
 
 [[package]]
 name = "cineon-sdk"
-version = "1.0.0"
-source = { path = "binary/cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
+version = "2.0.0"
+source = { path = "binary/cineon_sdk-2.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" }
 dependencies = [
     { name = "cineon-format" },
     { name = "cython" },
@@ -463,7 +463,7 @@ dependencies = [
     { name = "typeguard" },
 ]
 wheels = [
-    { filename = "cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:4f8d19bf9bc1a2c7b3e73ecb5da093d1d6176ee2914ebe2342f70e2054a4375b" },
+    { filename = "cineon_sdk-2.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:676c219a3e0ffc12aaf9aea2147fc1a551db4ed81425aa5b36024fd7329e9f66" },
 ]
 
 [package.metadata]
@@ -828,7 +828,7 @@ wheels = [
 
 [[package]]
 name = "example-crossformer-sdk"
-version = "0.0.1"
+version = "0.0.2"
 source = { editable = "." }
 dependencies = [
     { name = "cineon-format" },
@@ -856,7 +856,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "cineon-format", specifier = ">=3.0.7" },
-    { name = "cineon-sdk", path = "binary/cineon_sdk-1.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" },
+    { name = "cineon-sdk", path = "binary/cineon_sdk-2.0.0-cp312-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl" },
     { name = "ipykernel", specifier = ">=7.3.0" },
     { name = "numpy", specifier = ">=2.4.0" },
     { name = "pip", specifier = ">=26.1.2" },
@@ -1224,7 +1224,7 @@ name = "gunicorn"
 version = "26.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "packaging", marker = "sys_platform != 'win32'" },
+    { name = "packaging" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6d/b7/a4a3f632f823e432ce6bc65f62961b7980c898c77f075a2f7118cb3846fe/gunicorn-26.0.0.tar.gz", hash = "sha256:ca9346f85e3a4aeeb64d491045c16b9a35647abd37ea15efe53080eb8b090baf", size = 727286, upload-time = "2026-05-05T06:38:25.529Z" }
 wheels = [
@@ -2268,7 +2268,7 @@ name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "ptyprocess", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "ptyprocess" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f", size = 166450, upload-time = "2023-11-25T09:07:26.339Z" }
 wheels = [
