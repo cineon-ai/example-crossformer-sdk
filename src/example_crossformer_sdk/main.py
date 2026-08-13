@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     # Load the model and data
     model = CrossformerModel("model")
-    data = CineonData.from_csv("data/example_4.csv")
+    data = CineonData.from_csv("data/example.csv")
 
     # Preprocess the data and run the model
     features, masks = model.preprocess([data])

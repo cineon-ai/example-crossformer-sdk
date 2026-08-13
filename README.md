@@ -1,7 +1,5 @@
 # Example Cineon Model Repository
 
-![Latest Release](badges/version.svg) ![Coverage Status](badges/coverage.svg) ![Code complexity](badges/complexity.svg)
-
 This repository contains an example of how to use Cineon Model binaries. For convenience, the wrapper Python class `CrossformerModel`, has been provided that provides type hints, but this is in no way required to use the binaries.
 
 ## Set up
